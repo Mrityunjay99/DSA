@@ -1,0 +1,40 @@
+public class insertArray {
+    public static void main(String[] args) {
+        SingleDimensional rec = new SingleDimensional(15);
+        rec.insert(0, 5);
+        rec.insert(1, 10);
+        rec.insert(2, 15);      
+        rec.insert(3, 20);
+        rec.insert(0, 0);
+        //rec.insert(5, 10);
+    }
+}
+         class  SingleDimensional {
+            int arr[] = null;
+
+
+            public SingleDimensional(int sizeofArray) {
+                arr = new int[sizeofArray];
+                for (int i = 0; i < arr.length; i++) {
+                    arr[i] = Integer.MIN_VALUE;
+
+                }
+            }
+
+            public void insert(int location, int valueToInsert) {
+                try {
+                    if (arr[location] == Integer.MIN_VALUE) {
+                        arr[location] = valueToInsert;
+                        System.out.println("Successfully inserted");
+                    } else {
+                        System.out.println("This cell is already occupy");
+                    }
+
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    System.out.println("invalid index to access array");
+                }
+            }
+        }
+
+    //}
+
